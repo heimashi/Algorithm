@@ -1,12 +1,11 @@
 /*
-*
 * g++ hello_cpp.cpp
-*
+* ./a.out
 */
 #include<iostream>
 
 using namespace std;
 
 int main(){
-  cout<<"hello"<<endl;
+  cout<<"hello cpp"<<endl;
 }

@@ -23,18 +23,18 @@ void merge_sorted_array(int a[], int a_len, int b[], int b_len, int c[]){
 }
 
 void merge_array(int arr[], int first, int mid, int last, int tmp[]){
-	int i=first,j=mid+1,k=0;
-	while(i<=mid&&j<=last){
+	int i=first,j=mid,k=0;
+	while(i<mid&&j<last){
 		if(arr[i]<=arr[j]){
 			tmp[k++]=arr[i++];
 		}else{
 			tmp[k++]=arr[j++];
 		}
 	}
-	while(i<=mid){
+	while(i<mid){
 		tmp[k++]=arr[i++];
 	}
-	while(j<=last){
+	while(j<last){
 		tmp[k++]=arr[j++];
 	}
 	for (i = 0; i < k; i++)  
@@ -42,10 +42,10 @@ void merge_array(int arr[], int first, int mid, int last, int tmp[]){
 }
 
 void merge_sort_util(int arr[], int first, int last, int tmp[]){
-	if(first<last){
+	if(first<(last-1)){
 		int mid = (first+last)/2;
 		merge_sort_util(arr,first,mid,tmp);
-		merge_sort_util(arr,mid+1,last,tmp);
+		merge_sort_util(arr,mid,last,tmp);
 		merge_array(arr,first,mid,last,tmp);
 	}
 }
